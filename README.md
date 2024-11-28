@@ -106,7 +106,7 @@ After building the image, run the container using the following command:
   The **-p 80:80** flag maps the local port 80 to the container's port 80.
 
 ### Step 3: Access the Application
-Open your browser and go to **http://127.0.0.1:8000** to view the application running inside the Docker container.
+Open your browser and go to **http://127.0.0.1:80** to view the application running inside the Docker container.
 
 ## Docker Compose
 Docker Compose allows you to define and run multi-container Docker applications. To simplify the setup, we have included a docker-compose.yml file.
@@ -125,4 +125,4 @@ To run the application in detached mode (in the background), use the following c
 This will build the images and start the application in the background.
 
 ### Step 3: Access the Application
-Once the application is up and running, open your browser and go to http://127.0.0.1:8000 to view the application running inside the container.
+Once the application is up and running, open your browser and go to http://127.0.0.1:80 to view the application running inside the container.
