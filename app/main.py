@@ -4,7 +4,7 @@ import sqlite3
 app = FastAPI()
 
 # Connect to SQLite database (it will be created automatically if it doesn't exist)
-conn = sqlite3.connect('test.db', check_same_thread=False)
+conn = sqlite3.connect('requests_count.db', check_same_thread=False)
 cursor = conn.cursor()
 
 # Create table to store the count (run once)
