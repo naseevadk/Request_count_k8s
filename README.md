@@ -23,8 +23,9 @@ Clone the repository to your local machine:
 It is recommended to create a virtual environment to manage dependencies:
 
 1. Create a virtual environment:
-    `python -m venv env`
-
+    ```
+    python -m venv env
+    ```
 
 2. Activate the virtual environment:
 - On **Windows**:
