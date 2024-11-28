@@ -72,10 +72,12 @@ Open your browser and go to `http://127.0.0.1:8000` to view the application.
 
 ## Project Structure
 
-    .
-    ├── main.py                   # FastAPI application code
-    ├── requirements.txt           # Python dependencies (FastAPI, Uvicorn)
-    └── README.md                  # Project documentation
+    .                  # Virtual environment directory
+    ├── app
+    │   ├── main.py                # FastAPI application code
+    │   ├── requirements.txt       # Python dependencies (FastAPI, Uvicorn)
+    ├── .gitignore                 # Git ignore file
+    └── README.md                # Project documentation
 
 
 ## Technologies Used
