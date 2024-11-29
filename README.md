@@ -1,5 +1,5 @@
 # grepsr_assessment
-This repo is created for job interview in greps
+This repo is created for job interview in Grepsr
 
 # FastAPI Counter Application
 
@@ -73,10 +73,16 @@ Open your browser and go to `http://127.0.0.1:8000` to view the application.
 ## Project Structure
 
     . 
+    ├── .github
+    │   ├── workflows
+    │       ├── python.yaml      # GitHub Actions file
     ├── app
     │   ├── main.py              # FastAPI application code
-    ├── requirements.txt     # Python dependencies (FastAPI, Uvicorn)
-    ├── Dockerfile               # Dockerfile to containerize and run application
+    ├── kubernetes
+    │   ├── deployment.yaml      # kubernetes deployment file
+    │   ├── service.yaml         # kubernetes service file
+    ├── requirements.txt         # Python dependencies (FastAPI, Uvicorn)
+    ├── Dockerfile               # Dockerfile to containerize and run 
     ├── docker-compose.yaml      # Docker compose file 
     ├── .gitignore               # Git ignore file
     └── README.md                # Project documentation
