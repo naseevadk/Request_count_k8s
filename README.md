@@ -126,3 +126,48 @@ This will build the images and start the application in the background.
 
 ### Step 3: Access the Application
 Once the application is up and running, open your browser and go to http://127.0.0.1:80 to view the application running inside the container.
+
+
+## Running the Application in Kubernetes
+
+### Prerequisites
+Ensure you have the following tools installed:
+
+    Minikube (Local Kubernetes cluster)
+    Kubectl (Kubernetes CLI)
+
+### Step 1: Start Minikube with Docker Driver
+Start Minikube using the Docker driver:
+
+    minikube start --driver=docker
+### Step 2: Apply Kubernetes Manifests
+Deploy the application to Kubernetes using the provided manifests:
+
+    kubectl apply -f deployment.yaml
+    kubectl apply -f service.yaml
+The deployment.yaml contains the Deployment resource that defines the application pods.
+The service.yaml exposes the application via a NodePort service.
+### Step 3: Verify Resources
+Verify that the pods and services are running:
+
+    kubectl get pods
+    kubectl get services
+### Step 4: Access the Application
+Option 1: Using Minikube Tunnel
+If using Minikube with the Docker driver, expose the service with the tunnel command:
+
+    minikube service fastapi-counter-service
+This will open a tunnel and expose the service at a localhost URL (e.g., http://127.0.0.1:30001).
+Option 2: Port Forwarding
+You can forward the Kubernetes service port to your local machine using:
+
+    kubectl port-forward service/fastapi-counter-service 8080:80
+Access the application at http://127.0.0.1:8080.
+Option 3: NodePort with Minikube IP
+Use the Minikube IP and NodePort to access the application:
+
+Get the Minikube IP:
+
+    minikube ip
+Access the application at **http://minikube-ip:30001**.
+
