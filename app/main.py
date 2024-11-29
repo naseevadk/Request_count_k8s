@@ -11,7 +11,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-# Connect to SQLite database (it will be created automatically if it doesn't exist)
+# Connect to SQLite database. (it will be created automatically if it doesn't exist)
 conn = sqlite3.connect('requests_count.db', check_same_thread=False)
 cursor = conn.cursor()
 
