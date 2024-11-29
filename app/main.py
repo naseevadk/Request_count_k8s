@@ -1,23 +1,36 @@
+"""
+FastAPI Counter Application
+
+This module contains a simple FastAPI application that counts the number
+of requests made to the `/count` endpoint. The count is stored in a SQLite
+database (`requests_count.db`).
+"""
+
 from fastapi import FastAPI
 import sqlite3
 
 app = FastAPI()
 
-# Connect to SQLite database (it will be created automatically if it doesn't exist.
+# Connect to SQLite database (it will be created automatically if it doesn't exist)
 conn = sqlite3.connect('requests_count.db', check_same_thread=False)
 cursor = conn.cursor()
 
-# Create table to store the count. Creates table if it does not exist.(run once)
+# Create table to store the count (run once)
 cursor.execute("CREATE TABLE IF NOT EXISTS counter (id INTEGER PRIMARY KEY, count INTEGER)")
 conn.commit()
 
 @app.get("/")
 def read_root():
+    """
+    Root endpoint that returns a welcome message.
+    """
     return {"message": "Welcome to the FastAPI Counter App!"}
 
 @app.get("/count")
 def get_count():
-    # Increment count by 1 for each request
+    """
+    Endpoint that increments and returns the request count.
+    """
     cursor.execute("SELECT count FROM counter WHERE id = 1")
     row = cursor.fetchone()
 
