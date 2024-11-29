@@ -6,8 +6,8 @@ of requests made to the `/count` endpoint. The count is stored in a SQLite
 database (`requests_count.db`).
 """
 
-from fastapi import FastAPI
 import sqlite3
+from fastapi import FastAPI
 
 app = FastAPI()
 
