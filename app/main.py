@@ -7,7 +7,7 @@ app = FastAPI()
 conn = sqlite3.connect('requests_count.db', check_same_thread=False)
 cursor = conn.cursor()
 
-# Create table to store the count (run once)
+# Create table to store the count. Creates table if it does not exist.(run once)
 cursor.execute("CREATE TABLE IF NOT EXISTS counter (id INTEGER PRIMARY KEY, count INTEGER)")
 conn.commit()
 
