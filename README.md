@@ -1,6 +1,3 @@
-# grepsr_assessment
-This repo is created for job interview in Grepsr
-
 # FastAPI Counter Application
 
 ## Overview
